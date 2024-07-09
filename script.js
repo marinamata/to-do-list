@@ -2,6 +2,8 @@ const inputBox = document.getElementById("input-box");
 
 const listContainer = document.getElementById("list-container");
 
+
+
 function addTask(){
     if(inputBox.value === ''){ // if input box is empty, they should have to write something
        alert("Please enter a task");
@@ -30,6 +32,14 @@ listContainer.addEventListener("click", function(e){
     }
 }, false); 
 
+//keyboard use for entering
+
+inputBox.addEventListener("keydown", function(event) {
+    if (event.keyCode === 13) {
+      addTask();
+    }
+  });
+
 //make our tags stay in the list even after refreshing the page
 
 function saveList(){
@@ -39,5 +49,6 @@ function saveList(){
 function displayData(){
     listContainer.innerHTML = localStorage.getItem("data");
 }
+
 
 displayData();  //display the data when the page is loaded
