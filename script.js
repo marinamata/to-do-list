@@ -1,8 +1,5 @@
 const inputBox = document.getElementById("input-box");
-
 const listContainer = document.getElementById("list-container");
-
-
 
 function addTask(){
     if(inputBox.value === ''){ // if input box is empty, they should have to write something
@@ -39,7 +36,7 @@ inputBox.addEventListener("keydown", function(event) {
       addTask();
     }
   });
-
+  
 //make our tags stay in the list even after refreshing the page
 
 function saveList(){
