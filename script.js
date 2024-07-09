@@ -7,7 +7,9 @@ function addTask(){
     }
     else{
         let li = document.createElement("li");  //vreate li element
-        li.innerHTML = inputBox.value;  //add text to the li element, whatever text in the input field is added to the li
+        let currentTime = new Date().toLocaleTimeString(); // get the current time
+        //li.innerHTML = inputBox.value;  //add text to the li element, whatever text in the input field is added to the li
+        li.innerHTML = `${inputBox.value} - ${currentTime}`;
         listContainer.appendChild(li);  //display the li element in the list container
         let span = document.createElement("span");  //create span element
         span.innerHTML = "\u00d7";     //add close button to the span element
